@@ -15,7 +15,9 @@
 
         function create(){
             $query="create table `".$this->name."` (
-               `id` INT NOT NULL AUTO_INCREMENT
+               `id` INT NOT NULL AUTO_INCREMENT,
+               `parent_id` int,
+               `parent_module` varchar(50)
 
             ";
 
