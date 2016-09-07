@@ -21,8 +21,15 @@ namespace modules\maxpatch\service;
         }
 
 
-        function doPatch($name){
-            $folder="modules/".$name."/patch";
+        function doPatch($name)
+        {
+            $folder = "modules/" . $name . "/patch";
+
+            if ($this->filesystem->exists("project/modules/" . $name . "/patch")) {
+             $folder = "project/modules/" . $name . "/patch";
+            }
+
+
             if($this->filesystem->exists($folder)){
                 $files=$this->filesystem->getFiles($folder);
                 foreach($files as $file){
