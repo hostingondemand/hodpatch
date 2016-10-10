@@ -1,5 +1,5 @@
 <?php
-namespace modules\maxpatch\service;
+namespace modules\hodpatch\service;
     use core\Loader;
     use lib\service\BaseService;
 
@@ -9,7 +9,7 @@ namespace modules\maxpatch\service;
 
         function setup(){
             if(!$this->setupDone) {
-                $table = $this->patch->table("maxpatch");
+                $table = $this->patch->table("hodpatch");
                 if (!$table->exists()) {
                     $table->addField("patch", "varchar(50)");
                     $table->addField("success", "int");
@@ -47,14 +47,14 @@ namespace modules\maxpatch\service;
 
 
                         $patchModel = $this->model->patch->initialize($patchName, $success, time());
-                        $this->db->saveModel($patchModel, "maxpatch");
+                        $this->db->saveModel($patchModel, "hodpatch");
                     }
                 }
             }
         }
 
         function needPatch($name){
-            $query=$this->db->query("select id from maxpatch where patch='".$name."' and success=1");
+            $query=$this->db->query("select id from hodpatch where patch='".$name."' and success=1");
             return !$this->db->numRows($query);
         }
 

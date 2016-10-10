@@ -1,5 +1,5 @@
 <?php
-    namespace modules\maxpatch\lib\patch;
+    namespace modules\hodpatch\lib\patch;
 
     use core\Lib;
 

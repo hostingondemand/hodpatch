@@ -1,16 +1,16 @@
 <?php
-namespace modules\maxpatch\lib;
+namespace modules\hodpatch\lib;
     use core\Lib;
     use core\Loader;
 
     class Patch extends Lib{
         function __construct()
         {
-            Loader::loadClass("basePatch","modules/maxpatch/lib/patch");
+            Loader::loadClass("basePatch","modules/hodpatch/lib/patch");
         }
 
         function table($name){
-            $table= Loader::CreateInstance("table","modules\maxpatch\lib\patch");
+            $table= Loader::CreateInstance("table","modules\hodpatch\lib\patch");
             $table->setName($name);
             return $table;
         }

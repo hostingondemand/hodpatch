@@ -1,5 +1,5 @@
 <?php
-    namespace modules\maxpatch\model;
+    namespace modules\hodpatch\model;
     use lib\model\BaseModel;
 
     class Patch extends BaseModel{
