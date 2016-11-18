@@ -20,13 +20,20 @@ namespace modules\hodpatch\service;
             }
         }
 
+        function doPatchProject(){
+            $this->doPatch("project");
+        }
 
         function doPatch($name)
         {
-            $folder = "modules/" . $name . "/patch";
+            if($name=="project"){
+                $folder="project/patch";
+            }else {
+                $folder = "modules/" . $name . "/patch";
 
-            if ($this->filesystem->exists("project/modules/" . $name . "/patch")) {
-             $folder = "project/modules/" . $name . "/patch";
+                if ($this->filesystem->exists("project/modules/" . $name . "/patch")) {
+                    $folder = "project/modules/" . $name . "/patch";
+                }
             }
 
 
